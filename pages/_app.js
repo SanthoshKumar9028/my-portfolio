@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import "../styles/globals.scss";
+import "../styles/globals.css";
 
 import { ThemeContext } from "../lib/Contexts";
 

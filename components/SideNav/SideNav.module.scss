@@ -1,0 +1,92 @@
+@import "../../styles/Common.module";
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+  transition: left 300ms;
+}
+.side-bar__nav {
+  display: flex;
+  height: 100%;
+  & > ul {
+    @extend %reset;
+    margin: auto;
+    list-style-type: none;
+    text-align: center;
+    li {
+      margin: 1rem 0 2rem;
+      color: white;
+    }
+    a {
+      display: block;
+      padding: 5px 0;
+      box-shadow: 0 5px black;
+      transition: box-shadow 220ms;
+      &:hover {
+        box-shadow: 0 5px white;
+      }
+    }
+  }
+}
+
+.side-bar__toggle-but {
+  position: fixed;
+  z-index: 1;
+  bottom: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: gray;
+  box-shadow: 0 0 5px white;
+  transition: transform 200ms;
+}
+
+@media screen and (min-width: 650px) {
+  .side-bar {
+    position: static;
+  }
+  .side-bar__toggle-but {
+    display: none;
+  }
+  .side-bar__nav {
+    & > ul {
+      width: 90%;
+    }
+  }
+}
+
+.wraper {
+  @include clear-fix;
+}
+
+@media screen and (min-width: 650px) {
+  .wraper__right {
+    float: right;
+    width: 30%;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: #333333;
+  }
+  .wraper__left {
+    float: right;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .wraper__right {
+    width: 20%;
+  }
+  .wraper__left {
+    width: 80%;
+  }
+}
