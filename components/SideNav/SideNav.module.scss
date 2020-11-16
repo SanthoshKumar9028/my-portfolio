@@ -6,8 +6,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #333333;
-  transition: left 300ms;
+  transition: left 300ms, background-color 200ms;
+  z-index: 1;
+
+  &--light {
+    background-color: #57acff;
+  }
+  &--dark {
+    background-color: #333;
+  }
 }
 .side-bar__nav {
   display: flex;
@@ -19,7 +26,6 @@
     text-align: center;
     li {
       margin: 1rem 0 2rem;
-      color: white;
     }
     a {
       display: block;
@@ -30,12 +36,15 @@
         box-shadow: 0 5px white;
       }
     }
+    .active {
+      box-shadow: 0 5px white;
+    }
   }
 }
 
 .side-bar__toggle-but {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   bottom: 2rem;
   right: 2rem;
   width: 40px;
@@ -67,6 +76,17 @@
   @include clear-fix;
 }
 
+.wraper__right {
+  transition: background-color 200ms;
+  &--light {
+    background-color: #57acff;
+  }
+  &--dark {
+    color: white;
+    background-color: #333;
+  }
+}
+
 @media screen and (min-width: 650px) {
   .wraper__right {
     float: right;
@@ -75,7 +95,6 @@
     top: 0;
     bottom: 0;
     height: 100vh;
-    background-color: #333333;
   }
   .wraper__left {
     float: right;

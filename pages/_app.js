@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     let localTheme = localStorage.getItem("theme-style");
-    console.log(localTheme);
     if (localTheme == undefined) {
       localStorage.setItem("theme-style", "light-theme");
       localTheme = "light-theme";
