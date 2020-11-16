@@ -1,16 +1,9 @@
-import { useState } from "react";
-
-export function ThemeToggle({ toggleHandler }) {
-  const [enabled, setEnabled] = useState(false);
-  const toggle = () => {
-    setEnabled(!enabled);
-    toggleHandler();
-  };
+export function ThemeToggle({ toggleHandler, enabled }) {
   return (
     <>
       <div
-        className={`but ${enabled ? "dark" : "light"}`}
-        onClick={toggle}
+        className={`but ${enabled ? "light" : "dark"}`}
+        onClick={toggleHandler}
       ></div>
       <style jsx>{`
         .but {

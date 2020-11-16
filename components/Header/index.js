@@ -22,7 +22,10 @@ export default function Header() {
             S<span>anthosh</span>K<span>umar</span>
           </a>
         </Link>
-        <ThemeToggle toggleHandler={toggleTheme} />
+        <ThemeToggle
+          enabled={theme == "dark-theme" ? false : true}
+          toggleHandler={toggleTheme}
+        />
       </header>
     </>
   );
