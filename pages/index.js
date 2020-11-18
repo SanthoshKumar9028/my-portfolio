@@ -32,6 +32,18 @@ export default function Home() {
     "container--light": theme == "light-theme",
   });
 
+  let headingClass = cs({
+    "heading--dark": theme == "dark-theme",
+    "heading--light": theme == "light-theme",
+  });
+  headingClass = `${styles.heading} ${styles[headingClass]}`;
+
+  let paraClass = cs({
+    "para--dark": theme == "dark-theme",
+    "para--light": theme == "light-theme",
+  });
+  paraClass = `${styles.para} ${styles[paraClass]}`;
+
   return (
     <Layout header footer>
       <div className={`${styles.container} ${styles[containerClass]}`}>
@@ -47,8 +59,8 @@ export default function Home() {
               <p>Web Developer, Data Scientist and Programmer</p>
             </div>
             <div>
-              <h1 className={styles.heading}>CAREER OBJECTIVES</h1>
-              <p className={styles.para}>
+              <h1 className={headingClass}>CAREER OBJECTIVES</h1>
+              <p className={paraClass}>
                 Seeking an entry level job within my chosen field that will
                 challenge me and allow me to use my education, skills in a way
                 that is mutually beneficial to both myself and my company and
@@ -56,7 +68,7 @@ export default function Home() {
               </p>
             </div>
 
-            <h1 className={styles.heading}>SKILLS</h1>
+            <h1 className={headingClass}>SKILLS</h1>
 
             <div className={styles.skillsets}>
               <SkillSet title="Web Development" skills={WebSkills} />
@@ -66,39 +78,6 @@ export default function Home() {
                 skills={LanguagesSkills}
               />
             </div>
-            {/* <p>
-              The PL report/Holdings/Positions data is prepared based on the
-              trades and information available with us, at the time of report
-              generation. Zerodha Broking Ltd., does not make any warranty,
-              express or implied, or assume any legal/consequential liability,
-              or responsibility for the authenticity, and completeness of the
-              data presented in this report/data. To double check your PL
-              report/Holdings/Positions data, verify it with the Tradebook,
-              Contract Notes and the Funds Statement which are available with
-              you at all times.
-            </p>
-            <p>
-              The PL report/Holdings/Positions data is prepared based on the
-              trades and information available with us, at the time of report
-              generation. Zerodha Broking Ltd., does not make any warranty,
-              express or implied, or assume any legal/consequential liability,
-              or responsibility for the authenticity, and completeness of the
-              data presented in this report/data. To double check your PL
-              report/Holdings/Positions data, verify it with the Tradebook,
-              Contract Notes and the Funds Statement which are available with
-              you at all times.
-            </p>
-            <p>
-              The PL report/Holdings/Positions data is prepared based on the
-              trades and information available with us, at the time of report
-              generation. Zerodha Broking Ltd., does not make any warranty,
-              express or implied, or assume any legal/consequential liability,
-              or responsibility for the authenticity, and completeness of the
-              data presented in this report/data. To double check your PL
-              report/Holdings/Positions data, verify it with the Tradebook,
-              Contract Notes and the Funds Statement which are available with
-              you at all times.
-            </p> */}
           </main>
         </SideNavWraper>
       </div>

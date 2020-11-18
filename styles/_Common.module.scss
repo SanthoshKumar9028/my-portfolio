@@ -10,3 +10,47 @@
     clear: both;
   }
 }
+
+.container {
+  font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  &--light {
+    background-image: url("/images/container-bg.jpg");
+  }
+  &--dark {
+    background-color: #666;
+  }
+}
+
+.heading {
+  padding: 1.5rem;
+  font-size: 1.5em;
+  text-align: center;
+  &--dark {
+    color: white;
+  }
+  &--light {
+    color: black;
+  }
+}
+
+.para {
+  padding: 0 1.5rem 1.5rem;
+  text-indent: 2rem;
+  text-align: justify;
+  &--dark {
+    color: white;
+  }
+  &--light {
+    color: black;
+  }
+}
+
+@media (min-width: 600px) {
+  .heading {
+    text-align: left;
+  }
+  .para {
+    text-align: left;
+  }
+}

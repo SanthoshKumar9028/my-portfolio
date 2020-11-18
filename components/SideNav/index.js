@@ -16,7 +16,7 @@ import { ThemeContext } from "../../lib/Contexts";
 const links = {
   Home: "",
   Projects: "",
-  "Contuct Me": "",
+  "Contact Me": "",
   "About Me": "",
 };
 
@@ -51,7 +51,7 @@ export default function SideNav({ active }) {
         <nav className={styles["side-bar__nav"]}>
           <ul>
             <li>
-              <Link href="#">
+              <Link href="/">
                 <a className={styles[addActiveClass["Home"]]}>
                   <FontAwesomeIcon icon={faHome} /> Home
                 </a>
@@ -65,8 +65,8 @@ export default function SideNav({ active }) {
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <a className={styles[addActiveClass["Contuct Me"]]}>
+              <Link href="/contact-me">
+                <a className={styles[addActiveClass["Contact Me"]]}>
                   <FontAwesomeIcon icon={faPhone} /> Contuct Me
                 </a>
               </Link>

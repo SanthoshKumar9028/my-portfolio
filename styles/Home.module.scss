@@ -1,13 +1,4 @@
-.container {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-  &--light {
-    background-image: url("/public/images/container-bg.jpg");
-  }
-  &--dark {
-    background-color: #666;
-  }
-}
+@import "/styles/common.module";
 
 .hero {
   padding: 10px;
@@ -46,24 +37,4 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 1rem;
-}
-
-.heading {
-  padding: 1.5rem;
-  font-size: 1.5em;
-  text-align: center;
-}
-.para {
-  padding: 0 1.5rem 1.5rem;
-  text-indent: 2rem;
-  text-align: justify;
-}
-
-@media (min-width: 600px) {
-  .heading {
-    text-align: left;
-  }
-  .para {
-    text-align: left;
-  }
 }
