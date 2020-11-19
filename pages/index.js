@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.scss";
 import Layout from "../components/Layout.js";
 import { SideNavWraper } from "../components/SideNav";
 import SkillSet from "../components/SkillSet";
+import ProjectCard from "../components/ProjectCard";
 
 const WebSkills = [
   { imgSrc: "/images/html.png", title: "HTML", value: "80" },

@@ -22,8 +22,7 @@ export default function ProjectCard(props) {
       <style jsx>
         {`
           div {
-            max-width: 400px;
-            margin: auto;
+            max-width: 350px;
             position: relative;
             overflow-y: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

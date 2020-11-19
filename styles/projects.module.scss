@@ -1,0 +1,28 @@
+@import "/styles/common.module";
+
+.heading {
+  margin: 0;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 0.5rem;
+}
+.projectCard {
+  margin-bottom: 2rem;
+  a:hover {
+    filter: invert(0.5);
+  }
+}
+
+@media (min-width: 600px) {
+  .heading {
+    text-align: center;
+  }
+  .projectsContainer {
+    padding: 0;
+  }
+}
