@@ -72,7 +72,7 @@ export default function SideNav({ active }) {
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/about-me">
                 <a className={styles[addActiveClass["About ME"]]}>
                   <FontAwesomeIcon icon={faInfo} /> About Me
                 </a>

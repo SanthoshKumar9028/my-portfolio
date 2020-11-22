@@ -1,0 +1,94 @@
+@import "/styles/common.module";
+
+.main {
+  &--dark > h1,
+  &--dark > table,
+  &--dark > dl {
+    color: white;
+  }
+  &--light > h1,
+  &--light > table,
+  &--light > dl {
+    color: black;
+  }
+  hr {
+    width: 75%;
+  }
+}
+
+.hero {
+  display: flex;
+  height: 80vh;
+  background-image: url("/images/hero-bg-2.jpg");
+  background-size: cover;
+
+  h1 {
+    text-align: center;
+    padding-top: 5rem;
+    @supports (display: flex) {
+      padding-top: 0;
+      margin: auto;
+    }
+  }
+}
+
+.intro {
+  text-align: center;
+  color: white;
+  background-color: black;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div {
+    max-width: 300px;
+    border-bottom: 2px solid;
+  }
+  &__name {
+    padding: 0 0.5rem;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: block;
+  }
+}
+
+.educations {
+  padding: 0 1rem;
+  dt {
+    font-weight: bold;
+  }
+  span {
+    margin-top: 5px;
+    display: block;
+  }
+}
+
+.info {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 650px) {
+  .main > h1 {
+    padding-left: 1rem;
+  }
+  .intro {
+    padding-left: 4rem;
+    justify-content: start;
+    & > div {
+      border-bottom: 0px solid;
+      border-right: 2px solid;
+    }
+  }
+  .educations {
+    padding: 0 3rem;
+    dd {
+      margin-top: 0.5rem;
+    }
+  }
+  .info td {
+    padding-right: 1rem;
+  }
+}
