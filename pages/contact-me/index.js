@@ -10,7 +10,6 @@ import { SideNavWraper } from "../../components/SideNav";
 async function handleOnSubmit(e, fname, lname, msg, reset) {
   e.preventDefault();
   let data = { fname, lname, msg };
-  console.log(data);
   try {
     let response = await fetch("/api/add-message", {
       method: "POST",
@@ -22,12 +21,13 @@ async function handleOnSubmit(e, fname, lname, msg, reset) {
     response = await response.text();
     if (response.indexOf("sent") != -1) {
       alert("Message sent sucessfully.");
-      reset();
       return;
     }
     throw new Error("unsucessfull");
   } catch {
     alert("Unsucessfully, try again later.");
+  } finally {
+    reset();
   }
 }
 
