@@ -1,8 +1,7 @@
 import { MongoClient } from "mongodb";
 
 export default async (req, res) => {
-  const uri =
-    "mongodb+srv://root:rootuser@cluster0.mcnx0.mongodb.net/myportfolio?retryWrites=true&w=majority";
+  const uri = process.env.MONGODB_KEY;
 
   const client = new MongoClient(uri);
 
