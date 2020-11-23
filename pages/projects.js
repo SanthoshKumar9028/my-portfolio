@@ -9,60 +9,18 @@ import styles from "../styles/projects.module.scss";
 import Layout from "../components/Layout.js";
 import { SideNavWraper } from "../components/SideNav";
 import ProjectCard from "../components/ProjectCard";
-
-let projects = [
-  {
-    title: "Facebook",
-    imgSrc: "/images/hero-bg.jpg",
-    icons: [
-      {
-        name: "github",
-        link: "/",
-      },
-    ],
-  },
-  {
-    title: "Google",
-    imgSrc: "/images/hero-bg.jpg",
-    icons: [
-      {
-        name: "github",
-        link: "/",
-      },
-    ],
-  },
-  {
-    title: "DoDoApp",
-    imgSrc: "/images/hero-bg.jpg",
-    icons: [
-      {
-        name: "github",
-        link: "/",
-      },
-    ],
-  },
-  {
-    title: "Blog",
-    imgSrc: "/images/hero-bg.jpg",
-    icons: [
-      {
-        name: "github",
-        link: "/",
-      },
-    ],
-  },
-];
+import { projectsDetails } from "../lib/DataSource.js";
 
 function getIconFor(name) {
   if (name == "github") return faGithub;
 }
 
-projects = projects.map((project) => {
+let projects = projectsDetails.map((project) => {
   let links = project.icons.map((icon) => {
     return {
       name: icon.name,
       icon: (
-        <a href="/">
+        <a href={icon.link} target="_blank">
           <FontAwesomeIcon icon={getIconFor(icon.name)} size="2x" />
         </a>
       ),

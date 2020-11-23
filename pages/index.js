@@ -7,23 +7,7 @@ import styles from "../styles/Home.module.scss";
 import Layout from "../components/Layout.js";
 import { SideNavWraper } from "../components/SideNav";
 import SkillSet from "../components/SkillSet";
-import ProjectCard from "../components/ProjectCard";
-
-const WebSkills = [
-  { imgSrc: "/images/html.png", title: "HTML", value: "80" },
-  { imgSrc: "/images/css.png", title: "CSS", value: "80" },
-  { imgSrc: "/images/js.jpg", title: "JavaScript", value: "80" },
-  { imgSrc: "/images/reactjs.png", title: "ReactJS", value: "70" },
-];
-const DatabaseSkills = [
-  { imgSrc: "/images/mysql.jpg", title: "MySql", value: "70" },
-  { imgSrc: "/images/mongodb.png", title: "MongoDB", value: "30" },
-];
-
-const LanguagesSkills = [
-  { imgSrc: "/images/python.png", title: "Python", value: "50" },
-  { imgSrc: "/images/js.jpg", title: "JavaScript", value: "80" },
-];
+import { skills } from "../lib/DataSource";
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
@@ -72,11 +56,11 @@ export default function Home() {
             <h1 className={headingClass}>SKILLS</h1>
 
             <div className={styles.skillsets}>
-              <SkillSet title="Web Development" skills={WebSkills} />
-              <SkillSet title="Databases" skills={DatabaseSkills} />
+              <SkillSet title="Web Development" skills={skills.WebSkills} />
+              <SkillSet title="Databases" skills={skills.DatabaseSkills} />
               <SkillSet
                 title="Programming Languages"
-                skills={LanguagesSkills}
+                skills={skills.LanguagesSkills}
               />
             </div>
           </main>

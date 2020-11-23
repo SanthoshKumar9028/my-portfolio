@@ -42,7 +42,7 @@ export default function ContactMe() {
                   My name is santhoshkumar <span>i am a</span>
                 </h1>
                 <ul className={styles.intro__list}>
-                  <li className={styles.intro__item}>Web Developer</li>
+                  <li className={styles.intro__item}>Web Developer,</li>
                   <li className={styles.intro__item}>Programmer</li>
                 </ul>
               </div>
