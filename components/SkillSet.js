@@ -1,9 +1,45 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 
 import cs from "../lib/ClassSelector";
 import { ThemeContext } from "../lib/Contexts";
 
-export function Skill({ imgSrc, title, value, className }) {
+const Meter = memo((props) => {
+  let { min, max, optimum, value, ...rest } = props;
+
+  min = isNaN(min) ? 0 : +min;
+  max = isNaN(max) ? 100 : +max;
+  optimum = isNaN(optimum) ? 0 : +optimum;
+  value = isNaN(value) ? 0 : +value;
+
+  return (
+    <>
+      <div {...rest}></div>
+      <style jsx>
+        {`
+          div {
+            height: 1rem;
+            position: relative;
+            box-shadow: inset 0 0 4px black;
+            border-radius: 10px;
+          }
+          div::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: ${value}%;
+            background-color: ${value <= optimum ? "orange" : "green"};
+            border-radius: 10px;
+            transition: width 200ms;
+          }
+        `}
+      </style>
+    </>
+  );
+});
+
+const Skill = memo(({ imgSrc, title, value, className }) => {
   const { theme } = useContext(ThemeContext);
 
   let skillClass = cs({
@@ -20,13 +56,13 @@ export function Skill({ imgSrc, title, value, className }) {
             <h2 className="skill__title">{title}</h2>
             <p className="skill__percent">{value || 0}%</p>
           </div>
-          <meter
+          <Meter
             className="skill__meter"
             min="0"
             max="100"
             optimum="30"
             value={value || 0}
-          ></meter>
+          />
         </div>
       </div>
       <style jsx>{`
@@ -84,9 +120,9 @@ export function Skill({ imgSrc, title, value, className }) {
       `}</style>
     </>
   );
-}
+});
 
-export default function SkillSet(props) {
+const SkillSet = memo((props) => {
   const { theme } = useContext(ThemeContext);
 
   let SkillSetClass = cs({
@@ -144,4 +180,6 @@ export default function SkillSet(props) {
       `}</style>
     </>
   );
-}
+});
+
+export { Meter, Skill, SkillSet as default };
